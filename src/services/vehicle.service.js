@@ -1,9 +1,8 @@
 import catchAsync from '../utils/catchAsync';
 import APIFeatures from '../utils/apiFeatures';
-import mongoose from 'mongoose';
 import { uploadFile, destroyFile } from '../utils/storage';
 
-import { Vehicle, Item } from '../models/index';
+import { Vehicle } from '../models/index';
 
 const folderName = 'vehicles';
 
@@ -63,18 +62,38 @@ export const createVehicle = catchAsync(async (req) => {
     bodyType,
     fuelType,
     sellerType,
-    transmissionType,  
+    transmissionType,
     horsepower,
-    noOfCylinders, 
+    noOfCylinders,
     Warranty,
     exteriorColor,
     interiorColor,
-    targetMarket } =
-    req.body;
+    targetMarket
+  } = req.body;
 
-  if (!adsType|| !name|| !category|| !description|| !city|| !price|| !tirm|| !year
-    || !regionalSpecs|| !doors|| !postedOn|| !bodyType|| !fuelType|| !sellerType
-    || !transmissionType|| !horsepower|| !noOfCylinders|| ! Warranty|| !exteriorColor|| !interiorColor|| !targetMarket) {
+  if (
+    !adsType ||
+    !name ||
+    !category ||
+    !description ||
+    !city ||
+    !price ||
+    !tirm ||
+    !year ||
+    !regionalSpecs ||
+    !doors ||
+    !postedOn ||
+    !bodyType ||
+    !fuelType ||
+    !sellerType ||
+    !transmissionType ||
+    !horsepower ||
+    !noOfCylinders ||
+    !Warranty ||
+    !exteriorColor ||
+    !interiorColor ||
+    !targetMarket
+  ) {
     return {
       status: 'error',
       message: 'fieldsRequired',
@@ -90,7 +109,7 @@ export const createVehicle = catchAsync(async (req) => {
   }
 
   const body = {
-    user:id,
+    user: id,
     adsType,
     name,
     category,
@@ -105,9 +124,9 @@ export const createVehicle = catchAsync(async (req) => {
     bodyType,
     fuelType,
     sellerType,
-    transmissionType,  
+    transmissionType,
     horsepower,
-    noOfCylinders, 
+    noOfCylinders,
     Warranty,
     exteriorColor,
     interiorColor,
@@ -161,14 +180,10 @@ export const updateVehicleDetails = catchAsync(async (req) => {
   await Promise.all(imagesPromises);
   newImgList = [...newImgList, ...imgList];
 
-  vehicle = await Vehicle.findByIdAndUpdate(
-    id,
-   req.body,
-    {
-      new: true,
-      runValidators: true
-    }
-  );
+  vehicle = await Vehicle.findByIdAndUpdate(id, req.body, {
+    new: true,
+    runValidators: true
+  });
 
   return {
     status: 'success',

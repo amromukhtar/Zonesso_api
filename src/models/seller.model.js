@@ -20,11 +20,11 @@ const sellerSchema = mongoose.Schema(
   {
     name: {
       type: String,
-      required:true,
+      required: true
     },
     logo: {
       type: imageSchema,
-      required: true,
+      required: true
     },
     imgList: {
       type: [imageSchema],
@@ -49,9 +49,10 @@ const sellerSchema = mongoose.Schema(
       default: 'showroom'
     },
     verified: {
-      type: String,
+      type: Boolean,
       required: true,
-    },
+      default: false
+    }
   },
   {
     timestamps: true
