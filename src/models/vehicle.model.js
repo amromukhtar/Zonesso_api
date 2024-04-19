@@ -1,6 +1,21 @@
 import mongoose from 'mongoose';
 import toJSON from './plugins/index';
 
+const imageSchema = mongoose.Schema({
+  id: {
+    type: 'string',
+    required: true
+  },
+  name: {
+    type: 'string',
+    required: true
+  },
+  img: {
+    type: 'string',
+    required: true
+  }
+});
+
 const vehicleSchema = mongoose.Schema(
   {
     user: {
@@ -15,7 +30,16 @@ const vehicleSchema = mongoose.Schema(
       type: String,
       required: true
     },
+    imgList: {
+      type: [imageSchema],
+      required: true,
+      default: []
+    },
     category: {
+      type: String,
+      required: true
+    },
+    description: {
       type: String,
       required: true
     },
