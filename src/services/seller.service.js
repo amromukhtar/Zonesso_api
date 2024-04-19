@@ -9,6 +9,7 @@ const folderName = 'sellers';
 export const querySellers = catchAsync(async (req) => {
   const sellers = await APIFeatures(req, Seller);
 
+  console.log(sellers)
   if (!sellers) {
     return {
       status: 'error',

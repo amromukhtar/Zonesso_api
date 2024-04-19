@@ -8,14 +8,14 @@ export const getAllVehicles = catchAsync(async (req, res) => {
   if (status === 'error') {
     return res.status(statusCode).json({
       status,
-      message: req.polyglot.t(message),
+      message: message,
       statusCode
     });
   }
 
   return res.status(statusCode).json({
     status,
-    message: req.polyglot.t(message),
+    message: message,
     vehicles
   });
 });
@@ -27,14 +27,14 @@ export const getVehicle = catchAsync(async (req, res) => {
   if (status === 'error') {
     return res.status(statusCode).json({
       status,
-      message: req.polyglot.t(message),
+      message: message,
       statusCode
     });
   }
 
   return res.status(statusCode).json({
     status,
-    message: req.polyglot.t(message),
+    message: message,
     vehicle
   });
 });
@@ -46,14 +46,14 @@ export const addVehicle = catchAsync(async (req, res) => {
   if (status === 'error') {
     return res.status(statusCode).json({
       status,
-      message: req.polyglot.t(message),
+      message: message,
       statusCode
     });
   }
 
   return res.status(statusCode).json({
     status,
-    message: req.polyglot.t(message),
+    message: message,
     vehicle
   });
 });
@@ -65,14 +65,14 @@ export const updateVehicleDetails = catchAsync(async (req, res) => {
   if (status === 'error') {
     return res.status(statusCode).json({
       status,
-      message: req.polyglot.t(message),
+      message: message,
       statusCode
     });
   }
 
   return res.status(statusCode).json({
     status,
-    message: req.polyglot.t(message),
+    message: message,
     vehicle
   });
 });
@@ -84,13 +84,13 @@ export const deleteVehicle = catchAsync(async (req, res) => {
   if (status === 'error') {
     return res.status(statusCode).json({
       status,
-      message: req.polyglot.t(message),
+      message: message,
       statusCode
     });
   }
 
   return res.status(statusCode).json({
     status,
-    message: req.polyglot.t(message)
+    message: message
   });
 });

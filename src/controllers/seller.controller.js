@@ -8,14 +8,14 @@ export const getAllSellers = catchAsync(async (req, res) => {
   if (status === 'error') {
     return res.status(statusCode).json({
       status,
-      message: req.polyglot.t(message),
+      message: message,
       statusCode
     });
   }
 
   return res.status(statusCode).json({
     status,
-    message: req.polyglot.t(message),
+    message: message,
     sellers
   });
 });
@@ -27,14 +27,14 @@ export const getSeller = catchAsync(async (req, res) => {
   if (status === 'error') {
     return res.status(statusCode).json({
       status,
-      message: req.polyglot.t(message),
+      message: message,
       statusCode
     });
   }
 
   return res.status(statusCode).json({
     status,
-    message: req.polyglot.t(message),
+    message: message,
     seller
   });
 });
@@ -46,14 +46,14 @@ export const addSeller = catchAsync(async (req, res) => {
   if (status === 'error') {
     return res.status(statusCode).json({
       status,
-      message: req.polyglot.t(message),
+      message: message,
       statusCode
     });
   }
 
   return res.status(statusCode).json({
     status,
-    message: req.polyglot.t(message),
+    message: message,
     seller
   });
 });
@@ -65,14 +65,14 @@ export const updateSellerDetails = catchAsync(async (req, res) => {
   if (status === 'error') {
     return res.status(statusCode).json({
       status,
-      message: req.polyglot.t(message),
+      message: message,
       statusCode
     });
   }
 
   return res.status(statusCode).json({
     status,
-    message: req.polyglot.t(message),
+    message: message,
     seller
   });
 });
@@ -85,13 +85,13 @@ export const deleteSeller = catchAsync(async (req, res) => {
   if (status === 'error') {
     return res.status(statusCode).json({
       status,
-      message: req.polyglot.t(message),
+      message: message,
       statusCode
     });
   }
 
   return res.status(statusCode).json({
     status,
-    message: req.polyglot.t(message)
+    message: message
   });
 });
